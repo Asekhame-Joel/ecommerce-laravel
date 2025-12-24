@@ -1,28 +1,30 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@include('admin.layouts.head')
 
-<head>
+<body>
+    <!-- BEGIN GLOBAL THEME SCRIPT -->
+    <script src="{{ asset('assets/admin/js/tabler-theme.min.js') }}"></script>
+    <!-- END GLOBAL THEME SCRIPT -->
+    <div class="page">
+        <!--  BEGIN SIDEBAR  -->
+        @include('admin.layouts.sidebar')
+        <!--  END SIDEBAR  -->
+        <div class="page-wrapper">
+            <!-- BEGIN PAGE HEAD -->
+            @include('admin.layouts.header')
+            <!-- END PAGE HEAD -->
 
-</head>
-
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-        @include('layouts.navigation')
-
-        <!-- Page Heading -->
-        @isset($header)
-            <header class="bg-white dark:bg-gray-800 shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-        @endisset
-
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+            <!-- BEGIN PAGE BODY -->
+            <div class="page-body">
+                @yield('content')
+            </div>
+            <!-- END PAGE BODY -->
+            <!--  BEGIN FOOTER  -->
+            @include('admin.layouts.footer')
+            <!--  END FOOTER  -->
+        </div>
     </div>
+
+    @include('admin.layouts.modal')
 </body>
 
 </html>

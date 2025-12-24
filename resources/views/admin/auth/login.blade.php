@@ -8,6 +8,7 @@
     <title>Sign in - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="{{ asset('assets/admin/css/tabler.css') }}" rel="stylesheet" />
+
 </head>
 
 <body>
